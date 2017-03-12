@@ -7,30 +7,14 @@
 #endif  
 #include <iostream>
 #include <string>
-
-
+#include "Bloc.h"
+using namespace std;
 
 class Mineur
 	{	
 	public:		
-		Mineur();
-		MINEUR_API void lancer();
-		//tant que vrai
-		// attendre arrivée d'une transaction
-		//gererTransaction()	
-		
-		 MINEUR_API void gererTransaction();
-		 //ajoute la transcation à une liste de transactions
-		 //si la taille liste de transactions == taille bloc alors
-			//chercherNonce()		 
-			//publier bloc	
-		//fin si			
-		
-		 MINEUR_API void chercherNonce();
-		 // essayer tous les nonces possibles jusqu'à trouver le bon en utilisant la fonction de hashage du composant Hasheur
-		 // publier le bloc
-		 // 
-		 MINEUR_API void publierBloc();		 
-		 //envoyer le bloc à tous les noeuds 
+		MINEUR_API Bloc creerBloc(TXI txi, string previous_hash);
+	private:
+		MINEUR_API void chercherNonce();		
 };
 
